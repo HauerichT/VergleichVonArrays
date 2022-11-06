@@ -1,25 +1,43 @@
 public class VergleichVonArrays {
 
-    public boolean isEqual(int[] a, int[] b) {
+    public void sortArrays(int[] array) {
 
-        boolean hatPaar = false;
+        int lower;
+        int higher;
+        boolean run = true;
 
-        if (a.length == b.length) {
-            for (int i = 0; i < a.length; i++) {
-                for (int j = 0; j < b.length; j++) {
-                    if (a[i] == b[j]) {
-                        hatPaar = true;
-                    }
-                    else {
-                        hatPaar = false;
-                    }
+        for (int i = 0; i < array.length && run; i++) {
+            run = false;
+
+            for (int j = 0; j < array.length-1; j++) {
+                if (array[j] > array[j + 1]) {
+                    higher = array[j];
+                    lower = array[j + 1];
+                    array[j] = lower;
+                    array[j + 1] = higher;
+                    run = true;
                 }
             }
-        } else {
-            return false;
         }
 
-        return hatPaar;
+    }
+
+    public boolean isEqual (int[] a, int[] b) {
+
+        sortArrays(a);
+        sortArrays(b);
+
+        if (a.length != b.length) return false;
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+                if (a[i] != b[i]) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
     
 }
