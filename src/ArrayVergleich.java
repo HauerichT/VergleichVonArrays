@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArrayVergleich {
 
     // Methode zum Sortieren eines Arrays (Bubblesort Algorithmus)
@@ -31,6 +33,12 @@ public class ArrayVergleich {
 
     // Methode zur Überprüfung zweier Arrays auf Übereinstimmung
     public boolean isEqual (int[] a, int[] b) {
+
+        // prüft auf leere Arrays
+        if (a.length == 0 || b.length == 0) {
+            System.out.println("Beide Arrays müssen Werte enthalten.");
+            return false;
+        }
 
         // ruft die Methode sortArrays auf und übergibt jeweils ein Array
         sortArrays(a);
