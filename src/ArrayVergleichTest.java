@@ -5,7 +5,6 @@ public class ArrayVergleichTest {
         // Testarrays
         int[] a = {1,2,3,4};
         int[] b = {3,1,6,2};
-
         // int[] a = {3,5,1,3};
         // int[] b = {1,5,3,3};
 
